@@ -35,11 +35,11 @@ export default function StepCard({ stepNumber, description, screenshot }: StepCa
             <p className="text-carbon">{description}</p>
             <button
               onClick={() => setOpen((v) => !v)}
-              className="mt-3 inline-flex items-center gap-1.5 text-xs text-mid-gray hover:text-carbon transition-colors"
+              className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-carbon border border-cloud rounded-md hover:border-mid-gray hover:bg-cloud transition-all"
             >
-              <ImageIcon size={13} />
+              <ImageIcon size={12} className="text-mid-gray" />
               {open ? 'Hide screenshot' : 'View screenshot'}
-              {open ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+              {open ? <ChevronUp size={12} className="text-mid-gray" /> : <ChevronDown size={12} className="text-mid-gray" />}
             </button>
             {open && (
               <div className="mt-3 rounded-lg overflow-hidden border border-cloud">
