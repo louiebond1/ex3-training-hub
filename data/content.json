@@ -1,0 +1,72 @@
+{
+  "modules": [
+    {
+      "id": "employee-central",
+      "title": "Employee Central",
+      "description": "Manage employee data, org structures and system settings",
+      "icon": "Users",
+      "active": true,
+      "categories": [
+        {
+          "id": "system-navigation",
+          "title": "System Navigation",
+          "processes": [
+            {
+              "id": "how-to-proxy",
+              "title": "How to Proxy",
+              "video": "https://www.loom.com/embed/611a01b8f7b241c593f45b551c1add2a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true",
+              "steps": [
+                { "id": 1, "description": "In the top right corner of the screen, click on your name", "screenshot": "/screenshots/proxy-step-1.png" },
+                { "id": 2, "description": "Select Proxy Now from the dropdown — the Select Target User window appears", "screenshot": "/screenshots/proxy-step-2.png" },
+                { "id": 3, "description": "Type in the full name of the employee you would like to impersonate", "screenshot": "/screenshots/proxy-step-3.png" },
+                { "id": 4, "description": "You are brought to that user's home page — proceed with your testing", "screenshot": "/screenshots/proxy-step-4.png" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "personal-information",
+          "title": "Personal Information",
+          "processes": [
+            {
+              "id": "update-personal-details",
+              "title": "Update Personal Details",
+              "steps": [
+                { "id": 1, "description": "Navigate to your Employee Profile" },
+                { "id": 2, "description": "Click Edit Personal Information" },
+                { "id": 3, "description": "Update the required fields" },
+                { "id": 4, "description": "Save your changes" }
+              ]
+            },
+            {
+              "id": "add-emergency-contact",
+              "title": "Add Emergency Contact",
+              "steps": [
+                { "id": 1, "description": "Navigate to your Employee Profile" },
+                { "id": 2, "description": "Click the Emergency Contact tab" },
+                { "id": 3, "description": "Click Add and fill in the contact details" },
+                { "id": 4, "description": "Save your changes" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sf-pay",
+      "title": "SF Pay",
+      "description": "Payroll configuration, processing and reporting",
+      "icon": "CreditCard",
+      "active": false,
+      "categories": []
+    },
+    {
+      "id": "time",
+      "title": "Time",
+      "description": "Time tracking, absence management and scheduling",
+      "icon": "Clock",
+      "active": false,
+      "categories": []
+    }
+  ]
+}
