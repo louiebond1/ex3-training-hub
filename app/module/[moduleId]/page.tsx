@@ -30,21 +30,29 @@ export default function ModulePage({
                 {cat.title}
               </h2>
               <div className="space-y-1">
-                {cat.processes.map((proc) => (
-                  <Link
-                    key={proc.id}
-                    href={`/module/${mod.id}/${cat.id}/${proc.id}`}
-                    className="flex items-center justify-between px-3 py-2.5 rounded-md hover:bg-cloud transition-colors group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <FileText size={15} className="text-carbon shrink-0" />
-                      <span className="text-carbon text-sm group-hover:text-scarlet transition-colors">
-                        {proc.title}
-                      </span>
+                {cat.processes.map((proc) => {
+                  const comingSoon = (proc as { comingSoon?: boolean }).comingSoon
+                  const inner = (
+                    <div className={`flex items-center justify-between px-3 py-2.5 rounded-md transition-colors ${comingSoon ? 'opacity-50 cursor-not-allowed' : 'hover:bg-cloud group'}`}>
+                      <div className="flex items-center gap-3">
+                        <FileText size={15} className="text-carbon shrink-0" />
+                        <span className={`text-carbon text-sm ${!comingSoon && 'group-hover:text-scarlet transition-colors'}`}>
+                          {proc.title}
+                        </span>
+                      </div>
+                      {comingSoon ? (
+                        <span className="bg-scarlet text-cloud text-xs font-semibold px-2 py-0.5 rounded">Coming Soon</span>
+                      ) : (
+                        <ChevronRight size={14} className="text-mid-gray" />
+                      )}
                     </div>
-                    <ChevronRight size={14} className="text-mid-gray" />
-                  </Link>
-                ))}
+                  )
+                  return comingSoon ? (
+                    <div key={proc.id}>{inner}</div>
+                  ) : (
+                    <Link key={proc.id} href={`/module/${mod.id}/${cat.id}/${proc.id}`}>{inner}</Link>
+                  )
+                })}
               </div>
             </div>
           ))}
