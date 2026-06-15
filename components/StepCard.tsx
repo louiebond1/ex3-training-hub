@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { ChevronDown, ChevronUp, Image as ImageIcon, X, ZoomIn } from 'lucide-react'
+import { ChevronDown, ChevronUp, X, ZoomIn } from 'lucide-react'
 import Image from 'next/image'
 
 type StepCardProps = {
@@ -37,7 +37,6 @@ export default function StepCard({ stepNumber, description, screenshot }: StepCa
               onClick={() => setOpen((v) => !v)}
               className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-carbon border border-cloud rounded-md hover:border-mid-gray hover:bg-cloud transition-all"
             >
-              <ImageIcon size={12} className="text-mid-gray" />
               {open ? 'Hide screenshot' : 'View screenshot'}
               {open ? <ChevronUp size={12} className="text-mid-gray" /> : <ChevronDown size={12} className="text-mid-gray" />}
             </button>
