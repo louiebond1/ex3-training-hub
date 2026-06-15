@@ -1,5 +1,4 @@
-export { default } from 'next-auth/middleware'
+// Auth temporarily disabled
+export function middleware() {}
 
-export const config = {
-  matcher: ['/((?!login|api/auth|_next/static|_next/image|favicon.ico).*)'],
-}
+export const config = { matcher: [] }
