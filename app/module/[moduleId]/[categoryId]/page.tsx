@@ -36,26 +36,38 @@ export default function CategoryPage({
           </h1>
 
           <div className="space-y-3 max-w-2xl">
-            {category.processes.map((proc) => (
-              <Link
-                key={proc.id}
-                href={`/module/${mod.id}/${category.id}/${proc.id}`}
-                className="flex items-center justify-between bg-white border border-cloud rounded-lg p-5 hover:shadow-sm hover:border-mid-gray transition-all group"
-              >
-                <div className="flex items-center gap-3">
-                  <FileText size={17} className="text-carbon shrink-0" />
-                  <div>
-                    <p className="text-carbon font-medium text-sm group-hover:text-scarlet transition-colors">
-                      {proc.title}
-                    </p>
-                    <p className="text-mid-gray text-xs mt-0.5">
-                      {proc.steps.length} steps
-                    </p>
+            {category.processes.map((proc) => {
+              const comingSoon = (proc as { comingSoon?: boolean }).comingSoon
+              const inner = (
+                <div className={`flex items-center justify-between bg-white border border-cloud rounded-lg p-5 transition-all ${comingSoon ? 'opacity-60 cursor-not-allowed' : 'hover:shadow-sm hover:border-mid-gray group'}`}>
+                  <div className="flex items-center gap-3">
+                    <FileText size={17} className="text-carbon shrink-0" />
+                    <div>
+                      <p className={`font-medium text-sm ${comingSoon ? 'text-carbon' : 'text-carbon group-hover:text-scarlet transition-colors'}`}>
+                        {proc.title}
+                      </p>
+                      <p className="text-mid-gray text-xs mt-0.5">
+                        {proc.steps.length} steps
+                      </p>
+                    </div>
                   </div>
+                  {comingSoon ? (
+                    <span className="bg-scarlet text-cloud text-xs font-semibold px-2 py-0.5 rounded">
+                      Coming Soon
+                    </span>
+                  ) : (
+                    <ChevronRight size={16} className="text-mid-gray" />
+                  )}
                 </div>
-                <ChevronRight size={16} className="text-mid-gray" />
-              </Link>
-            ))}
+              )
+              return comingSoon ? (
+                <div key={proc.id}>{inner}</div>
+              ) : (
+                <Link key={proc.id} href={`/module/${mod.id}/${category.id}/${proc.id}`}>
+                  {inner}
+                </Link>
+              )
+            })}
           </div>
         </main>
       </div>

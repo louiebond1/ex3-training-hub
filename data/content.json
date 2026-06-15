@@ -31,6 +31,7 @@
             {
               "id": "update-personal-details",
               "title": "Update Personal Details",
+              "comingSoon": true,
               "steps": [
                 { "id": 1, "description": "Navigate to your Employee Profile" },
                 { "id": 2, "description": "Click Edit Personal Information" },
@@ -41,6 +42,7 @@
             {
               "id": "add-emergency-contact",
               "title": "Add Emergency Contact",
+              "comingSoon": true,
               "steps": [
                 { "id": 1, "description": "Navigate to your Employee Profile" },
                 { "id": 2, "description": "Click the Emergency Contact tab" },
